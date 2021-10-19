@@ -124,6 +124,7 @@ func (s *server) leave(c *client, roomName string)  {
 
 	if !ok {
 		c.sendMessage("You cannot leave this room")
+		return
 	}
 
 	delete(s.rooms[room.name].clients, c.conn)
