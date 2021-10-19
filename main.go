@@ -8,6 +8,7 @@ import (
 func main() {
 
 	s := newServer()
+	go s.run()
 
 	http.HandleFunc("/ws", s.handleConnection)
 	log.Printf("Server starting at localhost:8888")
